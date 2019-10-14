@@ -8,23 +8,23 @@ export interface IState {
 }
 
 export default class RootView extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-    this.state = {
-    };
-  }
+	constructor(props: IProps) {
+		super(props);
+		this.state = {
+		};
+	}
 
-  public render() {
-    return (
-      <View style={styles.container}>
-          {this.props.children}
-      </View>
-    );
-  }
+	public render() {
+		return (
+			<View style={styles.container}>
+				{this.props.children}
+			</View>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    }
+	container: {
+		flex: 1,
+	}
 })

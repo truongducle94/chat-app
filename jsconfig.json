@@ -8,7 +8,9 @@
         "lib": ["src/lib/*"],
         "features": ["src/features/*"],
         "routers": ["src/routers/*"],
-        "containers":["src/containers/*"]
+        "containers":["src/containers/*"],
+        "resources":["src/resources/*"],
+        "styles":["src/styles/*"]
       }
     }
   }
