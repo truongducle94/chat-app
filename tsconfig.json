@@ -60,6 +60,9 @@
       "containers": [
         "src/containers/*"
       ],
+      "components": [
+        "src/components/*"
+      ],
       "resources": [
         "src/resources/*"
       ],

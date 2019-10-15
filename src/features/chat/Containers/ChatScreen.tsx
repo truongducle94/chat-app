@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { View, StyleSheet, Text, TextInput, FlatList } from 'react-native';
 import { chatDataType } from '../Types/types';
+import DefaultHeader from 'components/Headers/DefaultHeader';
+import images from 'resources/images';
+import { width } from 'lib/configs/config';
+import colors from 'resources/colors';
+import sizes from 'resources/sizes';
+import fonts from 'resources/fonts';
 
 interface IProps {
 }
@@ -28,18 +34,25 @@ export default class ChatScreen extends React.Component<IProps, IState> {
     public render() {
         return (
             <View style={styles.container}>
+                <DefaultHeader
+                    title='Chat'
+                    iconLeft={images.ic_back}
+                />
                 <FlatList
                     data={this.state.data}
                     extraData={this.state.data}
                     keyExtractor={this.keyExtractor}
                     renderItem={this.renderItem}
                 />
-                <TextInput
-                    placeholder='Write'
-                    value={this.state.text}
-                    onChangeText={this.onChangeText}
-                    onSubmitEditing={this.onSubmitMessage}
-                />
+                <View style={styles.inputView}>
+                    <TextInput
+                        placeholder='Write'
+                        value={this.state.text}
+                        onChangeText={this.onChangeText}
+                        onSubmitEditing={this.onSubmitMessage}
+                        style={styles.inputStyle}
+                    />
+                </View>
             </View>
         );
     }
@@ -51,7 +64,7 @@ export default class ChatScreen extends React.Component<IProps, IState> {
     onSubmitMessage = () => {
         this.setState((prev: IState) => {
             return {
-                data: [...prev.data, {id: new Date().getTime(), user_receiver: 1, message: prev.text}]
+                data: [...prev.data, { id: new Date().getTime(), user_receiver: 1, message: prev.text }]
             }
         })
     }
@@ -62,5 +75,21 @@ export default class ChatScreen extends React.Component<IProps, IState> {
 const styles = StyleSheet.create({
     container: {
         flex: 1
+    },
+    inputStyle: {
+        paddingVertical: 5,
+        borderRadius: 10,
+        borderColor: colors.borderColor,
+        borderWidth: 0.5,
+        fontSize: sizes.content,
+        fontFamily: fonts.title,
+        flex: 1,
+        alignItems: 'stretch',
+        paddingHorizontal: 8
+    },
+    inputView: {
+        width: width,
+        flexDirection: 'row',
+        padding: 10,
     }
 })

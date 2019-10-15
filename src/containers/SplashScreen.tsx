@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import NavigationService from 'routers/NavigationService';
 import SCREEN_NAME from 'lib/utils/screenName';
 import strings from 'resources/strings';
+import fonts from 'resources/fonts';
+import sizes from 'resources/sizes';
+import colors from 'resources/colors';
 
 interface IProps {
 }
@@ -21,7 +24,7 @@ export default class SplashScreen extends React.Component<IProps, IState> {
 		return (
 			<TouchableWithoutFeedback onPress={this.onStartApp}>
 				<View style={styles.container}>
-					<Text>{strings.greeting}</Text>
+					<Text style={styles.welcomeText}>{strings.greeting}</Text>
 				</View>
 			</TouchableWithoutFeedback>
 
@@ -36,6 +39,15 @@ export default class SplashScreen extends React.Component<IProps, IState> {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'red'
+		backgroundColor: 'red',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	welcomeText: {
+		fontFamily: fonts.title,
+		fontSize: sizes.title,
+		color: colors.whiteColor,
+		marginHorizontal: 30,
+		textAlign: 'center'
 	}
 })

@@ -9,6 +9,7 @@
         "features": ["src/features/*"],
         "routers": ["src/routers/*"],
         "containers":["src/containers/*"],
+        "components":["src/components/*"],
         "resources":["src/resources/*"],
         "styles":["src/styles/*"]
       }
