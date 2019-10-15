@@ -1,6 +1,4 @@
-import { defaultObject } from "lib/Types/types";
-
-const fonts: defaultObject = {
+const fonts = {
     title: 'Roboto-Medium',
     content: 'Roboto-Regular',
     subContent: 'Roboto-Light'

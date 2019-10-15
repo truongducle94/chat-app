@@ -1,6 +1,4 @@
-import { defaultObject } from "lib/Types/types";
-
-const colors: defaultObject = {
+const colors = {
     primaryColor: '#0084FC',
     secondaryColor: '#F00000',
     whiteColor: '#FFFFFF',

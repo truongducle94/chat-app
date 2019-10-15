@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import NavigationService from 'routers/NavigationService';
 import SCREEN_NAME from 'lib/utils/screenName';
+import strings from 'resources/strings';
 
 interface IProps {
 }
@@ -20,7 +21,7 @@ export default class SplashScreen extends React.Component<IProps, IState> {
 		return (
 			<TouchableWithoutFeedback onPress={this.onStartApp}>
 				<View style={styles.container}>
-					<Text>SplashScreen</Text>
+					<Text>{strings.greeting}</Text>
 				</View>
 			</TouchableWithoutFeedback>
 
